@@ -19,9 +19,7 @@ A **Godot 4** editor plugin that adds `EditableTexture`, a `Texture2D` resource 
 
 1. Copy this folder into your project as:
 
-   `res://Addons/editable_texture/`
-
-   (Match the path used in `plugin.gd`’s `preload` for `inspector_plugin.gd`.)
+   `res://addons/godot_editable_texture`
 
 2. Open **Project → Project Settings → Plugins**, enable **EditableTexture**.
 
