@@ -8,7 +8,6 @@ A **Godot 4** editor plugin that adds `EditableTexture`, a `Texture2D` resource 
 - **Inspector preview** — Selected `EditableTexture` shows a 128×128 preview in the inspector.
 - **Edit in external app** — **Edit** saves a temp PNG, launches your configured editor, and reapplies changes when the file changes (while the Godot editor window is focused).
 - **Editor path** — **⚙** picks the executable once; path is stored in editor settings (`editable_texture/external_editor_path`).
-- **Force picker** — Hold **Ctrl** and click **Edit** to choose the external editor again (or if no path is set / file missing).
 - **Undo** — Applying a new image uses `EditorUndoRedoManager` so you can revert.
 
 ## Requirements
@@ -26,6 +25,7 @@ A **Godot 4** editor plugin that adds `EditableTexture`, a `Texture2D` resource 
 ## Usage
 
 1. Create or assign an `EditableTexture` where a `Texture2D` is expected (e.g. `TextureRect`, `Sprite2D`, style textures).
+  <img width="661" height="312" alt="image" src="https://github.com/user-attachments/assets/e274c445-1f0f-41f2-ab16-370a0e8f916b" />
 2. In the inspector, use **Edit** to open the temp PNG in your external editor; save the file there to update the resource in Godot.
 3. Use **⚙** if you need to change the external program.
 
