@@ -25,10 +25,9 @@ A **Godot 4** editor plugin that adds `EditableTexture`, a `Texture2D` resource 
 ## Usage
 
 1. Create or assign an `EditableTexture` where a `Texture2D` is expected (e.g. `TextureRect`, `Sprite2D`, style textures).
-  <img width="379" height="241" alt="image" src="https://github.com/user-attachments/assets/8e7d222d-f0cb-4494-9cd2-27c5fc362ef8" />
-
-2. In the inspector, use **Edit** to open the temp PNG in your external editor; save the file there to update the resource in Godot.
-3. Use **⚙** if you need to change the external program.
+    <img width="379" height="241" alt="image" src="https://github.com/user-attachments/assets/8e7d222d-f0cb-4494-9cd2-27c5fc362ef8" />
+2. Use **⚙** if you need to change the external program.
+3. In the inspector, use **Edit** to open the temp PNG in your external editor; save the file there to update the resource in Godot.
 
 Empty or invalid data falls back to a 16×16 white placeholder until you set real image data.
 
