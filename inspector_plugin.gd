@@ -41,9 +41,9 @@ func _select_external_editor_async(tree: SceneTree) -> String:
 	var file_dialog: EditorFileDialog = EditorFileDialog.new()
 	file_dialog.access = EditorFileDialog.ACCESS_FILESYSTEM
 	file_dialog.file_mode = EditorFileDialog.FILE_MODE_OPEN_FILE
-	file_dialog.title = "选择外部编辑程序"
+	file_dialog.title = "Select external image editor"
 	if OS.get_name() == "Windows":
-		file_dialog.filters = PackedStringArray(["*.exe ; 可执行文件"])
+		file_dialog.filters = PackedStringArray(["*.exe ; Executable files"])
 	tree.root.add_child(file_dialog)
 	file_dialog.popup_centered(Vector2i(800, 600))
 	var selected_file: String = await file_dialog.file_selected
@@ -90,7 +90,7 @@ func _process_texture_async(editable_texture: EditableTexture) -> void:
 					var old_texture: ImageTexture = editable_texture._texture
 					var new_texture: ImageTexture = ImageTexture.create_from_image(modified_image)
 					var undo_redo: EditorUndoRedoManager = EditorInterface.get_editor_undo_redo()
-					undo_redo.create_action("修改纹理")
+					undo_redo.create_action("Modify EditableTexture")
 					undo_redo.add_do_property(editable_texture, "_texture", new_texture)
 					undo_redo.add_undo_property(editable_texture, "_texture", old_texture)
 					undo_redo.commit_action()
