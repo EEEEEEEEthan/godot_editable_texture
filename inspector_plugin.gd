@@ -53,8 +53,8 @@ func _select_external_editor_async(tree: SceneTree) -> String:
 	return selected_file
 func _process_texture_async(editable_texture: EditableTexture) -> void:
 	var tree: SceneTree = texture_rect.get_tree()
-	var guid: String = str(Time.get_ticks_msec()) + "_" + str(randi())
-	var temp_path: String = OS.get_cache_dir().path_join("editable_texture_temp_" + guid + ".png")
+	var guid: String = "%s_%s" % [Time.get_ticks_msec(), randi()]
+	var temp_path: String = OS.get_cache_dir().path_join("editable_texture_temp_%s.png" % guid)
 	var image: Image = editable_texture._texture.get_image()
 	var save_result: Error = image.save_png(temp_path)
 	if save_result != OK:
@@ -98,7 +98,7 @@ func _process_texture_async(editable_texture: EditableTexture) -> void:
 			var is_running: bool = false
 			if OS.get_name() == "Windows":
 				var output: Array = []
-				var exit_code: int = OS.execute("tasklist", PackedStringArray(["/FI", "PID eq " + str(process_id)]), output, true, false)
+				var exit_code: int = OS.execute("tasklist", PackedStringArray(["/FI", "PID eq %s" % process_id]), output, true, false)
 				is_running = exit_code == 0 and output.size() > 0 and output[0].contains(str(process_id))
 			else:
 				is_running = OS.execute("ps", PackedStringArray(["-p", str(process_id)]), [], true, false) == 0
